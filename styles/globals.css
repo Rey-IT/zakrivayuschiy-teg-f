@@ -2,6 +2,7 @@
 Здесь же лежит утилитарный класс visually-hidden на случай, если нужно скрыть какой-то элемент, но оставить доступным для скринридера.
 Вы можете изменять этот файл или дополнять. Но скорее всего, вам это не потребуется. */
 
+
 *,
 *::after,
 *::before {
@@ -24,6 +25,10 @@ ol,
 li {
   margin: 0;
   padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
 }
 
 a {
@@ -35,6 +40,20 @@ input {
   color: currentColor;
   font-family: inherit;
   font-size: inherit;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  appearance: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a:focus,
+button:focus {
+  outline: none;
 }
 
 ul,

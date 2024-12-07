@@ -9,3 +9,57 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+
+@keyframes explosion-heart {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.5);
+    }
+}
+
+@keyframes sparks-heart {
+    from {
+        --heart-sparks-color: transparent;
+    }
+    to {
+        --heart-sparks-color: #f00;
+    }
+}
+
+.contour {
+    transition: fill .1s linear;
+}
+
+.main-body {
+    transition: fill .3s linear .05;
+}
+
+.core {
+    transition: fill .3s linear .03s;
+}
+
+.like-icon:hover {
+    --heart-body-color: var(--heart-contour-color);
+    --heart-core-color: var(--heart-contour-color);
+  }
+
+  .like-icon:active {
+    --heart-body-color: #f00;
+    --heart-core-color: #f00;
+  }
+
+  .is-liked {
+    --heart-contour-color: #f00;
+    --heart-body-color: #f00;
+    --heart-core-color: #f00;
+  }
+
+  .is-liked {
+    animation:
+      explosion-heart .3s ease-in .1s 1 normal,
+      sparks-heart .3s ease-in .3s 1 normal;
+    transform-origin: center;
+  }
+
