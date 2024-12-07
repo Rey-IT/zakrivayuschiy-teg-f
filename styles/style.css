@@ -33,7 +33,7 @@
 }
 
 .header {
-    margin: 6.25rem auto;
+    margin: 6.25rem auto 3.125rem;
     max-inline-size: 44rem;
     border: .125rem solid var(--accent-color, #000);
     background-color: var(--background-color, #fff);
@@ -53,7 +53,7 @@
 }
 
 .header-title {
-    margin-block-end: 7rem;
+    margin-block-end: 6rem;
     font-family: var(--accent-font), Arial, Helvetica, sans-serif;
     font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     font-weight: 400;
@@ -102,7 +102,7 @@
 }
 
 .card {
-  margin: 6.25rem auto 3.125rem;
+  margin: 3.25rem auto;
   max-inline-size: 44rem;
   border: .125rem solid var(--accent-color, #000);
   inline-size: 100%;
@@ -251,12 +251,9 @@
   mix-blend-mode: difference;
 }
 
-.modal {
-  min-inline-size: 23.4375rem;
-}
-
 .modal[open] {
   padding: clamp(1.875rem, 2.8891rem + -1.1268vw, 2.625rem);
+  margin-block-end: 50vh;
   inline-size: 22.125rem;
   border: .125rem solid var(--accent-color, #000);
   background-color: var(--background-color, #fff);
@@ -291,7 +288,16 @@
 }
 
 @media (width <= 375px) {
+  .header-text {
+    padding-block-start: 6rem;
+  }
+
   .memory-button {
     flex-direction: column;
+  }
+
+  .memory-icon {
+    inline-size: 19px;
+    block-size: 19px;
   }
 }
