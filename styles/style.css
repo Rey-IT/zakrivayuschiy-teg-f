@@ -13,7 +13,7 @@
 .page {
     min-inline-size: 375px;
     min-block-size: 100dvb;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: var(--main-font), Arial, Helvetica, sans-serif;
     font-size: 1.125rem;
     font-weight: 400;
     line-height: 1.3rem;
@@ -40,8 +40,8 @@
 }
 
 .header-text {
-    margin-block-end: 1.25rem;
-    padding-block-start: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem);
+    margin-block-end: 1.2rem;
+    padding-block-start: 8.2rem;
     display: block;
     font-family: var(--accent-font), Arial, Helvetica, sans-serif;
     font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
@@ -53,7 +53,7 @@
 }
 
 .header-title {
-    margin-block-end: 6rem;
+    margin-block-end: 7.7rem;
     font-family: var(--accent-font), Arial, Helvetica, sans-serif;
     font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
     font-weight: 400;
@@ -102,11 +102,15 @@
 }
 
 .card {
-  margin: 3.25rem auto;
+  margin: 6.25rem auto;
   max-inline-size: 44rem;
   border: .125rem solid var(--accent-color, #000);
   inline-size: 100%;
   background-color: var(--background-color, #fff);
+}
+
+.card:not(:first-child) {
+    margin: 3.25rem auto;
 }
 
 .card__title {
@@ -191,7 +195,7 @@
 }
 
 .card__content {
-  padding: 1.5625rem;
+  padding: 1.7rem;
   border-block-start: .125rem solid var(--accent-color, #000);
 
   display: flex;
@@ -204,7 +208,7 @@
 
   display: flex;
   align-items: center;
-  column-gap: .25rem;
+  column-gap: .15rem;
 }
 
 .card__icon-button {
