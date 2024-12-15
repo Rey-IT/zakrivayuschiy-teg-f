@@ -9,7 +9,6 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
-
 .page {
     min-inline-size: 375px;
     min-block-size: 100dvb;
@@ -62,6 +61,113 @@
     text-transform: uppercase;
 }
 
+.main {
+    margin: 6.25rem auto;
+    max-inline-size: 43.75rem;
+    display: grid;
+    gap: 49px;
+}
+
+.card {
+    margin:  auto;
+    max-inline-size: 44rem;
+    border: .125rem solid var(--accent-color, #000);
+    inline-size: 100%;
+    background-color: var(--background-color, #fff);
+}
+
+.card__title {
+    padding: .3125rem .625rem;
+    border-block-end: .125rem solid var(--accent-color, #000);
+  
+    font-weight: 700;
+}
+
+@supports (font-variation-settings: normal) {
+    .card__title {
+      font-variation-settings: 'wght' var(--title-fw, 700);
+    }
+}
+  
+
+.content__figure {
+    margin: 0;
+    position: relative;
+}
+
+.card__img {
+    inline-size: 100%;
+    object-fit: cover;
+    object-position: right;
+    display: block;
+    aspect-ratio: 1 / 1;
+}
+  
+.content__figure-caption {
+    position: absolute;
+    inset-block-start: 1.5rem;
+    inset-inline-end: 1.5rem;
+  
+    font-family: var(--accent-font), Arial, Helvetica, sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1;
+  
+    text-shadow:
+      -0.0625rem 0 var(--background-color, #fff),
+      0 .0625rem var(--background-color, #fff),
+      .0625rem 0 var(--background-color, #fff),
+      0 -0.0625rem var(--background-color, #fff);
+  
+    mix-blend-mode: hard-light;
+    opacity: .5;
+}
+  
+@supports (-webkit-text-stroke: 1px #fff) {
+    .content__figure-caption {
+      -webkit-text-stroke: .0625rem var(--background-color, #fff);
+      text-shadow: none;
+    }
+}
+
+.card__content {
+    padding: 1.7rem 1.6rem 1.7rem;
+    border-block-start: .125rem solid var(--accent-color, #000);
+  
+    display: flex;
+    flex-direction: column;
+    row-gap: 25px;
+}
+  
+.card__buttons {
+    align-self: flex-end;
+  
+    display: flex;
+    align-items: center;
+    column-gap: .2rem;
+}
+
+.card__icon-button {
+    border: .125rem solid transparent;
+    inline-size: 2.6875rem;
+    block-size: 2.375rem;
+  
+    display: flex;
+    place-items: center;
+  
+    transition: border-color .3s ease;
+}
+  
+.card__icon-button:focus-visible {
+    border-color: var(--accent-color, #000);
+}
+
+.like-icon {
+    display: block;
+    inline-size: 39px;
+    block-size: 36px;
+}
+
 .button {
     border: .125rem solid var(--accent-color);
     font-family: var(--accent-font), Arial, Helvetica, sans-serif;
@@ -73,7 +179,6 @@
     transition: box-shadow .3s ease;
     overflow: hidden;
 }
-
 
 .button:hover::before {
   transform: translateX(0);
@@ -92,78 +197,14 @@
   transition: transform .5s ease-in-out;
 }
 
+.card__like-button {
+    padding: .625rem 1.0625rem;
+    inline-size: 8.125rem;
+    text-align: center;
+}
+
 .button__text {
     mix-blend-mode: difference;
-}
-
-.main {
-  margin: 0 auto 6.25rem;
-  max-inline-size: 43.75rem;
-}
-
-.card {
-  margin: 6.25rem auto;
-  max-inline-size: 44rem;
-  border: .125rem solid var(--accent-color, #000);
-  inline-size: 100%;
-  background-color: var(--background-color, #fff);
-}
-
-.card:not(:first-child) {
-    margin: 3.25rem auto;
-}
-
-.card__title {
-  padding: .3125rem .625rem;
-  border-block-end: .125rem solid var(--accent-color, #000);
-
-  font-weight: 700;
-}
-
-@supports (font-variation-settings: normal) {
-  .card__title {
-    font-variation-settings: 'wght' var(--title-fw, 700);
-  }
-}
-
-.content__figure {
-  margin: 0;
-  position: relative;
-}
-
-.card__img {
-  inline-size: 100%;
-  object-fit: cover;
-  object-position: right;
-  display: block;
-  aspect-ratio: 1 / 1;
-}
-
-.content__figure-caption {
-  position: absolute;
-  inset-block-start: 1.5rem;
-  inset-inline-end: 1.5rem;
-
-  font-family: var(--accent-font), Arial, Helvetica, sans-serif;
-  font-size: .875rem;
-  font-weight: 400;
-  line-height: 1;
-
-  text-shadow:
-    -0.0625rem 0 var(--background-color, #fff),
-    0 .0625rem var(--background-color, #fff),
-    .0625rem 0 var(--background-color, #fff),
-    0 -0.0625rem var(--background-color, #fff);
-
-  mix-blend-mode: hard-light;
-  opacity: .5;
-}
-
-@supports (-webkit-text-stroke: 1px #fff) {
-  .content__figure-caption {
-    -webkit-text-stroke: .0625rem var(--background-color, #fff);
-    text-shadow: none;
-  }
 }
 
 .filter-grayscale {
@@ -192,50 +233,6 @@
 
 .filter-green {
   filter: hue-rotate(-236deg) blur(2px);
-}
-
-.card__content {
-  padding: 1.7rem;
-  border-block-start: .125rem solid var(--accent-color, #000);
-
-  display: flex;
-  flex-direction: column;
-  row-gap: 25px;
-}
-
-.card__buttons {
-  align-self: flex-end;
-
-  display: flex;
-  align-items: center;
-  column-gap: .15rem;
-}
-
-.card__icon-button {
-  border: .125rem solid transparent;
-  inline-size: 2.6875rem;
-  block-size: 2.375rem;
-
-  display: flex;
-  place-items: center;
-
-  transition: border-color .3s ease;
-}
-
-.card__icon-button:focus-visible {
-  border-color: var(--accent-color, #000);
-}
-
-.card__like-button {
-  padding: .625rem 1.0625rem;
-  inline-size: 8.125rem;
-  text-align: center;
-}
-
-.like-icon {
-  display: block;
-  inline-size: 39px;
-  block-size: 36px;
 }
 
 .memory-button {
@@ -292,16 +289,38 @@
 }
 
 @media (width <= 375px) {
-  .header-text {
-    padding-block-start: 6rem;
-  }
+    .header-text {
+        padding-block-start: 7.5rem;
+    }
 
-  .memory-button {
-    flex-direction: column;
-  }
+    .header-title {
+        margin-block-end: 7.4rem;
+        padding-block-start: .2rem;
+    }
 
-  .memory-icon {
-    inline-size: 19px;
-    block-size: 19px;
-  }
+    .main {
+        gap: 48px;
+    }
+
+    .card__content {
+        padding: 1.8rem 1.6rem 1.6rem;
+    }
+
+    .card__buttons {
+        column-gap: .1rem;
+    }    
+
+    .card__like-button {
+        margin-block-start: 0.1rem;
+        padding: .64rem 1.0625rem;
+    }
+
+    .memory-button {
+        flex-direction: column;
+    }
+
+    .memory-icon {
+        inline-size: 28px;
+        block-size: 28px;
+    }
 }
