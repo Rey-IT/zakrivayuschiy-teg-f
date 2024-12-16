@@ -62,7 +62,7 @@
 }
 
 .main {
-    margin: 6.25rem auto;
+    margin: 6.25rem auto 0rem;
     max-inline-size: 43.75rem;
     display: grid;
     gap: 49px;
@@ -302,6 +302,10 @@
         gap: 48px;
     }
 
+    .content__figure-caption {
+        right: 11px;
+    }
+
     .card__content {
         padding: 1.8rem 1.6rem 1.6rem;
     }
@@ -322,5 +326,9 @@
     .memory-icon {
         inline-size: 28px;
         block-size: 28px;
+    }
+
+    .dialog-text {
+        font-size: 0.7rem;
     }
 }
