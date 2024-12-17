@@ -328,7 +328,22 @@
         block-size: 28px;
     }
 
-    .dialog-text {
-        font-size: 0.7rem;
+    .modal[open] {
+        margin-inline-start: 17px;
+        min-inline-size: auto;
+        padding-block-start: 30px;
+        padding-inline-start: 39px;
+        padding-inline-end: 39px;
+        padding-block-end: 30px;
+        max-inline-size: fit-content;
+        margin-block-end: 25vh;
+    }
+
+    .modal-content {
+        margin-block-end: 30px;
+    }
+
+    .modal-icon {
+        margin-block-end: 5px;
     }
 }
