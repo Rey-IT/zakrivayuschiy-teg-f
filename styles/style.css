@@ -346,4 +346,9 @@
     .modal-icon {
         margin-block-end: 5px;
     }
+
+    .dialog-text {
+        font-size: 14px;
+        line-height: 21px;
+    }
 }
